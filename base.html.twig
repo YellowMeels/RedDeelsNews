@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <title>News articles</itle>
+    <body>
+        <h1>A lot of news articles!</h1>
+        <div class="NewsArticles">
+            {% for i in 0..20 %}
+                {% set article = articles[loop.index] %}
+                <div class="article_container">
+                    <h2>{{ article.getTitle() }}</h2>
+                    <h4>{{ article.getAuthor().getFullName() }}</h4>
+                    <div class="article__body">
+                        {{ article.getBody() }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
